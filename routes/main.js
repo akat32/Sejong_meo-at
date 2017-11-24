@@ -3,20 +3,15 @@ module.exports = (router,fs)=>{
     res.render('main');
   })
   .get('/information', (req,res)=>{
-    fs.readFile('./views/image/information.png', (error,data)=>{
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.end(data);
-    });
+    return res.sendFile('/root/meouk/Sejong_meo-at/views/image/information.PNG');
   })
   .get('/slo', (req,res)=>{
-    fs.readFile('./views/image/slo.png', (error,data)=>{
-      res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.readFile('./views/image/slo.PNG', (error,data)=>{
       res.end(data);
     });
   })
   .get('/news', (req,res)=>{
-    fs.readFile('./views/image/news.png', (error,data)=>{
-      res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.readFile('./views/image/news.PNG', (error,data)=>{
       res.end(data);
     });
   });
