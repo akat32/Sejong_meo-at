@@ -10,6 +10,8 @@ app.use(CORS);
 
 var port = process.env.PORT || 4000;
 var main = require('./routes/main')(express.Router(), fs);
+var quiz = require('./routes/quiz')(express.Router(), fs);
+var transe = require('./routes/transe')(express.Router(), fs);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('port', port)
@@ -17,6 +19,8 @@ app.set('view engine', 'ejs');
 
 
 app.use('/main', main);
+app.use('/quiz', quiz);
+app.use('/transe', transe);
 
 app.listen(3111, ()=>{
   console.log('Server portin on 3111')

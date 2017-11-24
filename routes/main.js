@@ -3,7 +3,9 @@ module.exports = (router,fs)=>{
     res.render('main');
   })
   .get('/information', (req,res)=>{
-    return res.sendFile('/root/meouk/Sejong_meo-at/views/image/information.PNG');
+    fs.readFile('./views/image/information.PNG', (error,data)=>{
+      res.end(data);
+    });
   })
   .get('/slo', (req,res)=>{
     fs.readFile('./views/image/slo.PNG', (error,data)=>{
