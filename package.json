@@ -1,11 +1,24 @@
 {
   "name": "king_sj",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akat32/Sejong_meo-at.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akat32/Sejong_meo-at/issues"
+  },
+  "homepage": "https://github.com/akat32/Sejong_meo-at#readme",
+  "description": ""
 }

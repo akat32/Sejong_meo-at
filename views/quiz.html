@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>세종머앟</title>
+<style>
+  body {
+    height: 1080px;
+    margin: 0;
+  }
+    .main {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0;
+
+    }
+    header {
+        position: relative;
+        background-color: rgb(245, 132, 153);
+        top:100px;
+    }
+    #tr {
+        position: relative;
+        left: 33%;
+    }
+    #quiz {
+        position: relative;
+        left : 48%;
+    }
+
+    section {
+      position: relative;;
+      top: 100px;
+      height: 100%;
+      display: flex;
+      width: 100%;
+    }
+    #question {
+      position: relative;
+      border: 8px solid rgb(245, 132, 153);
+      top: 100px;
+      width: 50%;
+      margin-left: 3%;
+      height: 28%;
+      display: flex;
+      color: rgb(245, 132, 153);
+      font-style: italic;
+    }
+    #answer{
+      position: relative;
+      left: 5%;
+      top: 80px;
+      height: 500px
+
+    }
+    #answer1 {
+      position: relative;
+      top: 0px;
+      left: 10%;
+      color: rgb(245, 132, 153);
+      height: 80%;
+      width: 60%;
+    }
+    #skip {
+      position: relative;
+      width: 200px;
+      height: 45px;
+      font-size: 30px;
+      text-align: center;
+      float: left;
+      right: 40%;
+
+    }
+    a{
+        border: 0;
+        outline: 0;
+        background-color: rgb(245, 132, 153);
+        font-size: 30px;
+        color: white;
+        text-decoration: none;
+    }
+
+    button{
+      border: 5px solid rgb(245, 132, 153);
+
+      text-align: left;
+      padding-left: 3px;
+
+    }
+    ol{
+      list-style: none;
+    }
+    li {
+      width: 500px;
+      margin-bottom: 20px;
+      height: 10%;
+    }
+    button:focus{
+      outline: none;
+    }
+</style>
+</head>
+<body>
+  <div class="main">
+
+    <header id = "menuBackground">
+        <a id = "tr" href="translation.html">translation</a>
+        <a id = "quiz" href="main.html">main</a>
+    </header>
+
+    <section>
+    <form id="question">
+      민식아 맞짱뜨자.
+    </form>
+    <ol id="answer">
+      <li>
+        <button id="answer1">
+          죽이기
+        </button>
+      </li>
+      <li>
+        <button id="answer1">
+          죽이기
+        </button>
+      </li>
+      <li>
+        <button id="answer1">
+          죽이기
+        </button>
+      </li>
+      <li>
+        <button id="answer1">
+          죽이기
+        </button>
+      </li>
+      <li>
+        <button id="answer1">
+          죽이기
+        </button>
+      </li>
+    <button id="skip">skip</button>
+    </section>
+</html>
