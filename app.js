@@ -17,10 +17,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('port', port)
 app.set('view engine', 'ejs');
 
-
 app.use('/main', main);
 app.use('/quiz', quiz);
 app.use('/transe', transe);
+
+
+app.get('/',(req,res)=>{
+  res.redirect('/main');
+});
+
 
 app.listen(3111, ()=>{
   console.log('Server portin on 3111')
