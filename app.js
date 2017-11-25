@@ -18,8 +18,11 @@ app.set('port', port)
 app.set('view engine', 'ejs');
 
 
+app.use('/main.html', main);
 app.use('/main', main);
+app.use('/quiz.html', quiz);
 app.use('/quiz', quiz);
+app.use('/translation.html', transe);
 app.use('/transe', transe);
 
 app.listen(3111, ()=>{
