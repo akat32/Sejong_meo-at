@@ -7,12 +7,12 @@ var CORS = require('cors')();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 app.use(CORS);
-
+require('./mongo');
 var port = process.env.PORT || 4000;
 var main = require('./routes/main')(express.Router(), fs);
 var quiz = require('./routes/quiz')(express.Router(), fs);
 var transe = require('./routes/transe')(express.Router(), fs);
-
+var word = require('./routes/word')(express.Router(), fs,Words);
 app.set('views', path.join(__dirname, 'views'));
 app.set('port', port)
 app.set('view engine', 'ejs');
@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use('/main', main);
 app.use('/quiz', quiz);
 app.use('/transe', transe);
-
+app.use('/word', word);
 
 app.get('/',(req,res)=>{
   res.redirect('/main');
