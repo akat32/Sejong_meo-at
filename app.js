@@ -25,21 +25,13 @@ app.use('/word', word);
 app.get('/',(req,res)=>{
   res.redirect('/main');
 })
-.post('/word/change', async(req,res)=>{
-  String.prototype.replaceAll = function(org, dest) {
-    return this.split(org).join(dest);
-  }
-  var result = await Words.find().sort({word : 1});
-  var str = req.body.str;
-  var ss;
-  for(i=0;;i++){
-    if(!result[i]) break;
-    ss = str.replaceAll(result[i].word,result[i].change);
-  }
-  console.log(ss);
-  res.status(200).send(ss);
+.post('/', (req,res)=>{
+  console.log(req.body.str);
+  res.send("s");
 })
+
 
 app.listen(3111, ()=>{
   console.log('Server portin on 3111')
 })
+//Axios
