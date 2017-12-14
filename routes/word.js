@@ -20,15 +20,12 @@ module.exports = (router,fs,Words)=>{
     }
   })
   .post('/change', async(req,res)=>{
-    String.prototype.replaceAll = function(org, dest) {
-      return this.split(org).join(dest);
-    }
     var result = await Words.find().sort({word : 1});
     var str = req.body.str;
     var ss;
     for(i=0;;i++){
       if(!result[i]) break;
-      ss = str.replaceAll(result[i].word,result[i].change);
+      ss = str.replace(new RegExp(result[i].word,"gi"),result[i].change);
     }
     console.log(ss);
     res.status(200).send(ss);
