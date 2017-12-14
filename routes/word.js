@@ -20,6 +20,7 @@ module.exports = (router,fs,Words)=>{
     }
   })
   .post('/change', async(req,res)=>{
+    console.log("signal");
     var result = await Words.find().sort({word : 1});
     var str = req.body.str;
     var ss;
