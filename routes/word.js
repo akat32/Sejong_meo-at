@@ -20,16 +20,24 @@ module.exports = (router,fs,Words)=>{
     }
   })
   .post('/change', async(req,res)=>{
-    console.log("signal");
-    var result = await Words.find().sort({word : 1});
+    var result = await Words.find().sort({_id : -1});
     var str = req.body.str;
-    var ss;
-    for(i=0;;i++){
-      if(!result[i]) break;
-      ss = str.replace(new RegExp(result[i].word,"gi"),result[i].change);
+    var ss = str;
+    var i=0;
+    console.log("fitst : " + result[0] + "\n\n\n\n");
+    if(str.length >= 1){
+      for(i=0;;i++){
+        console.log(result[i]);
+        if(!result[i]) break;
+        ss = ss.replace(new RegExp(result[i].word,"gi"),result[i].change);
+        console.log("바뀐 : " + ss + "\n");
+      }
+      res.status(200).send(ss);
+      console.log(str + "\n" + ss);
     }
-    console.log(ss);
-    //res.status(200).send(ss);
+    else {
+      res.status(404).send("입력해요..");
+    }
   })
   return router;
 };

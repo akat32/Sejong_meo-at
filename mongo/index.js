@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/asdasd');
+var db = mongoose.connect('mongodb://localhost/a1');
 mongoose.Promise = global.Promise;
 
 var WordsSchema = mongoose.Schema({

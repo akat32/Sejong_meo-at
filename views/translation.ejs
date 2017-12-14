@@ -107,9 +107,25 @@
     border-radius: 5px;
   }
 </style>
-    <script src="https://npmcdn.com/axios/dist/axios.min.js">
-
-    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    function TranseButton(){
+      var myElem = document.getElementById('school');
+      var requrl = "/word/change";
+      var reqstr = {str : myElem.value}
+      axios.post(requrl, reqstr)
+      .then(function(response){
+        console.log("success",response.data)
+        var myElem2 = document.getElementById('beautifulKorean');
+        myElem2.value = response.data;
+      })
+      .catch(function(response){
+        console.log("error", response);
+      });
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -126,16 +142,16 @@
     <div id="content">
       <h3 style="color:rgb(245, 132, 153);">급식체</h3>
       <div id="translation">
-        <textarea type="text" id="school" name="str"></textarea>
+        <textarea type="text" id="school" name="school"></textarea>
       </div>
     </div>
     <div id="content2">
-      <button type="submit" id="button">번역</input>
+      <button id="button" onclick="TranseButton();">번역</input>
     </div>
     <div id="content3">
       <h3 style="color:rgb(245, 132, 153);">자랑스러운 한글</h3>
       <div id="hanguel">
-          <input type="textarea" id="beautifulKorean" readonly></input>
+        <textarea type="text" id="beautifulKorean" readonly></textarea>
       </div>
     </div>
   </section>
