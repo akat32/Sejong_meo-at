@@ -29,7 +29,6 @@ module.exports = (router,fs,Words)=>{
       ss = str.replace(new RegExp(result[i].word,"gi"),result[i].change);
     }
     console.log(ss);
-    res.render('index', { title: 'Express' });
     //res.status(200).send(ss);
   })
   return router;
