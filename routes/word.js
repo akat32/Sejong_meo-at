@@ -24,16 +24,12 @@ module.exports = (router,fs,Words)=>{
     var str = req.body.str;
     var ss = str;
     var i=0;
-    console.log("fitst : " + result[0] + "\n\n\n\n");
     if(str.length >= 1){
       for(i=0;;i++){
-        console.log(result[i]);
         if(!result[i]) break;
         ss = ss.replace(new RegExp(result[i].word,"gi"),result[i].change);
-        console.log("바뀐 : " + ss + "\n");
       }
       res.status(200).send(ss);
-      console.log(str + "\n" + ss);
     }
     else {
       res.status(404).send("입력해요..");
